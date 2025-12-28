@@ -1,0 +1,152 @@
+/* ====== Стили страницы экскурсии ====== */
+
+.tour-detail-container {
+    max-width: 600px; /* 🔥 совпадает со stories */
+    margin: 20px auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 🔙 Кнопка назад */
+.back-button {
+    align-self: flex-start; /* выравнивание по левому краю */
+    background: #fff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px; /* 🔥 немного отступа от блока */
+}
+
+.back-button:hover {
+    background: #f0f0f0;
+    color: #d62828; /* 🔴 стрелочка становится красной */
+}
+
+.back-button:active {
+    background: #e0e0e0;
+    color: #d62828;
+    transform: scale(0.95);
+}
+
+/* Заголовок экскурсии */
+.tour-header {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.tour-header-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.tour-header-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 15px 0 5px;
+    color: #333;
+}
+
+.tour-header-description {
+    font-size: 16px;
+    color: #666;
+    padding: 0 15px 15px;
+}
+
+/* Элементы экскурсии */
+.tour-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tour-element {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* 🔥 Изменила шапку элемента */
+.tour-element-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    cursor: pointer;
+    background: #fff; /* белый фон */
+    border: 1px solid #000; /* чёрный контур */
+    border-radius: 12px; /* закруглённые углы */
+    transition: background 0.2s ease;
+}
+
+.tour-element-header:hover {
+    background: #fafafa;
+}
+
+.tour-element-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+}
+
+.tour-element-icon-placeholder {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.tour-element-title {
+    flex-grow: 1;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    text-align: left;
+}
+
+.tour-element-arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+/* При открытии поворачиваем стрелку */
+.tour-element-header.active .tour-element-arrow {
+    transform: rotate(180deg);
+}
+
+/* Скрытый контент */
+.tour-element-content {
+    display: none;
+    padding: 14px 20px;
+    font-size: 15px;
+    color: #555;
+    text-align: left;
+}
+
+.tour-element-content img,
+.tour-element-content video {
+    max-width: 100%;
+    margin-top: 12px;
+    border-radius: 10px;
+}
+
+.no-elements {
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+}
